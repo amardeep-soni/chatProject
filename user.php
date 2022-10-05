@@ -35,7 +35,7 @@ if (!isset($_SESSION['unique_id'])) {
                         <p><?php echo $row['status'] ?></p>
                     </div>
                 </div>
-                <a href="#" class="logout">Logout</a>
+                <a href="php/logout.php?logout_id=<?php echo $row['unique_id'] ?>" class="logout">Logout</a>
             </header>
             <div class="search">
                 <span class="text">Select an user to Start chat</span>
@@ -43,7 +43,7 @@ if (!isset($_SESSION['unique_id'])) {
                 <button><i class="fas fa-search"></i></button>
             </div>
             <div class="users-list">
-                
+
             </div>
         </section>
     </div>

@@ -4,6 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: 'poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
