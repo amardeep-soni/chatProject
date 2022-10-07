@@ -7,7 +7,7 @@ $output = "";
 
 
 // fetching the users list
-if (mysqli_num_rows($sql) == 1) {
+if (mysqli_num_rows($sql) == 0) {
     $output .= "No users are available to chat";
 } elseif (mysqli_num_rows($sql) > 0) {
     include "data.php";

@@ -4,9 +4,10 @@ if (isset($_SESSION['unique_id'])) { // if user is logged in then come to this p
     include_once "config.php";
     $logout_id = mysqli_real_escape_string($conn, $_GET['logout_id']);
     if (isset($logout_id)) { // if logout id is set
+        // once user logout then we  update the user to Offline now and make hi last_login to the current time();
         $status = "Offline now";
-        // once user logout then we';; update this status to offline and in the login form we'll again update the status to active now if user logged in sucessfully
-        $sql = mysqli_query($conn, "UPDATE users SET status = '{$status}' WHERE unique_id = {$logout_id}");
+        $time = time();
+        $sql = mysqli_query($conn, "UPDATE users SET status = '{$status}', last_login = {$time} WHERE unique_id = {$logout_id}");
         if ($sql) {
             session_unset();
             session_destroy();

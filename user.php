@@ -49,6 +49,7 @@ if (!isset($_SESSION['unique_id'])) {
     </div>
 
     <script src="js/users.js"></script>
+    <script src="js/status.js"></script>
 </body>
 
 </html>

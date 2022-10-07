@@ -15,6 +15,7 @@ if (!isset($_SESSION['unique_id'])) {
     <title>Amardeep Chat App --> Users</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -49,26 +50,25 @@ if (!isset($_SESSION['unique_id'])) {
         </section>
     </div>
     <script src="js/chat.js"></script>
+    <script src="js/status.js"></script>
+    <script type="text/javascript">
+        // show user is offline or online text below the name of the user
+        const statusEl = document.querySelector(".details p");
+        setInterval(() => {
+            // let's start Ajax
+            let xhr = new XMLHttpRequest(); // creating xml object
+            xhr.open("GET", "php/get-chat-user-status.php?user_id=<?php echo $user_id; ?>", true);
+            xhr.onload = () => {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        let data = xhr.response;
+                        statusEl.innerText = data;
+                    }
+                }
+            }
+            xhr.send();
+        }, 500); // this function will run frequently after 500ms
+    </script>
 </body>
 
 </html>
-
-
-<script type="text/javascript">
-    // show user is offline or online text below the name of the user
-    const statusEl = document.querySelector(".details p");
-    setInterval(() => {
-        // let's start Ajax
-        let xhr = new XMLHttpRequest(); // creating xml object
-        xhr.open("GET", "php/get-status.php?user_id=<?php echo $user_id; ?>", true);
-        xhr.onload = () => {
-            if (xhr.readyState == XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    let data = xhr.response;
-                    statusEl.innerText = data;
-                }
-            }
-        }
-        xhr.send();
-    }, 500); // this function will run frequently after 500ms
-</script>

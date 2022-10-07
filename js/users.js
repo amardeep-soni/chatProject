@@ -49,3 +49,20 @@ setInterval(() => {
     }
     xhr.send();
 }, 500); // this function will run frequently after 500ms
+
+// show the logged user is offline or online text below the name of the user
+const statusEl = document.querySelector(".details p");
+setInterval(() => {
+    // let's start Ajax
+    let xhr = new XMLHttpRequest(); // creating xml object
+    xhr.open("GET", "php/get-logged-user-status.php", true);
+    xhr.onload = () => {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                let data = xhr.response;
+                statusEl.innerText = data;
+            }
+        }
+    }
+    xhr.send();
+}, 500); // this function will run frequently after 500ms
