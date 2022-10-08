@@ -1,6 +1,7 @@
 const form = document.querySelector(".signup form"),
     continueBtn = form.querySelector(".button input"),
-    errorText = form.querySelector(".error-txt");
+    errorText = form.querySelector(".error-txt"),
+    successText = form.querySelector(".success-txt");
 
 form.onsubmit = (e) => {
     e.preventDefault(); //preevanting form from submitting
@@ -15,10 +16,19 @@ continueBtn.onclick = () => {
                 let data = xhr.response;
 
                 if (data == "success") {
-                    location.href = "user.php";
+                    successText.textContent = 'Account Created successfully.';
+                    successText.style.display = "block";
+                    errorText.style.display = "none";
+                    setTimeout(() => {
+                        location.href = "verify_email.php"; // after data is inserted successfully redirect the user to verify_email page 
+                    }, 3000);
                 } else {
                     errorText.textContent = data;
                     errorText.style.display = "block";
+                    successText.style.display = "none";
+                    setTimeout(() => { // hide the error message after 3 second
+                        errorText.style.display = "none";
+                    }, 3000);
                 }
             }
         }

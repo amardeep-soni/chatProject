@@ -13,12 +13,21 @@ continueBtn.onclick = () => {
         if (xhr.readyState == XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 let data = xhr.response;
-                
                 if (data == "success") {
                     location.href = "user.php";
+                } else if (data == 'not verifyed') { // if the user is not verified his email then redirect him to verify email
+                    errorText.textContent = 'Your email is not verifyed.';
+                    errorText.style.display = "block";
+                    setTimeout(() => { // hide the error message after 3 second
+                        location.href = "verify_email.php";
+                    }, 3000);
+
                 } else {
                     errorText.textContent = data;
                     errorText.style.display = "block";
+                    setTimeout(() => { // hide the error message after 3 second
+                        errorText.style.display = "none";
+                    }, 3000);
                 }
             }
         }

@@ -48,6 +48,16 @@ body {
     border: 1px solid #f5c6cb;
     display: none;
 }
+.form form .success-txt {
+    color: #32721c;
+    background: #d8f8d7;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #d1f5c6;
+    display: none;
+}
 
 .form form .name-details {
     display: flex;
@@ -177,6 +187,14 @@ form .name-details .field:last-child {
     padding: 7px 15px;
     background-color: #333;
     border-radius: 5px;
+}
+.verify .sendAgain {
+    color: #fff;
+    font-size: 17px;
+    padding: 7px 15px;
+    background-color: #333;
+    border-radius: 5px;
+    display: none;
 }
 
 .users .search {

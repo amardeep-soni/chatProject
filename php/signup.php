@@ -37,10 +37,11 @@ if (!empty($fname) && !empty($lname) && !empty($email) && !empty($password)) {
 
                         // let's insert all user data inside table
 
-                        $sql2 = mysqli_query($conn, "INSERT INTO users (unique_id, fname, lname, email, password, img,status) VALUES ({$random_id}, '{$fname}', '{$lname}', '{$email}', '{$password}', '{$new_img_name}', '{$status}')");
-
+                        $sql2 = mysqli_query($conn, "INSERT INTO users (unique_id, fname, lname, email, password, img,status, email_verify) VALUES ({$random_id}, '{$fname}', '{$lname}', '{$email}', '{$password}', '{$new_img_name}', '{$status}', 'false')");
                         if ($sql2) { // if these data inserted
                             echo "success";
+                            session_start();
+                            $_SESSION['email'] = $email; // setting email session for use this email in verify page
                         }
                     }
                 } else {
