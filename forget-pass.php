@@ -12,31 +12,27 @@
 
 <body>
     <div class="wrapper">
-        <section class="form signup">
+        <section class="form forgetPass">
             <header>Amardeep Chat App</header>
             <form action="">
                 <div class="error-txt">This is an error message!</div>
-                <div class="field input">
+                <div class="success-txt">This is an error message!</div>
+                <div class="field input emailInput">
                     <label>Email Address</label>
                     <input type="text" name="email" placeholder="Enter your email">
                 </div>
-                <div class="field input">
-                    <label>Password</label>
-                    <input type="password" name="password" placeholder="Enter your password">
-                    <i class="fas fa-eye"></i>
+                <div id="hiddenField">
+                    
                 </div>
                 <div class="field input button">
-                    <input type="submit" value="Continue to chat">
+                    <input type="submit" value="Find Email">
                 </div>
             </form>
-            <div class="link"><a href="forget-pass.php">Forget Password</a></div>
-            <hr>
-            <div class="link">Not yet signed up? <a href="index.php">Signup now</a></div>
+            <div class="link"><a href="login.php">Login now</a></div>
         </section>
     </div>
 
-    <script src="js/passShowHide.js"></script>
-    <script src="js/login.js"></script>
+    <script src="js/forget-pass.js"></script>
 </body>
 
 </html>

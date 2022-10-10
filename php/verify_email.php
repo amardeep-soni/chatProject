@@ -10,7 +10,14 @@ if (!empty($email) && !empty($code)) { // if the email and code is not empty
         if (mysqli_num_rows($sql) > 0) { // if the email is find from the database
             $row = mysqli_fetch_assoc($sql);
             if ($code == $row['code']) { // if that email code and the entered code is same then (user is verifyed so update the email_verify field to true and destroy the session as you created to use email)
-                $sql2 = mysqli_query($conn, "UPDATE `users` SET `email_verify` = 'true' WHERE `email` = '{$row['email']}'");
+
+                if (isset($_SESSION['forgetPass'])) { // if forget password is done by user then don't set email verify to true we will set true if the password is updated successfully
+                    $emailVerify = 'false';
+                } else {
+                    $emailVerify = 'true';
+                }
+
+                $sql2 = mysqli_query($conn, "UPDATE `users` SET `email_verify` = '{$emailVerify}' WHERE `email` = '{$row['email']}'");
                 echo "success";
                 session_destroy();
             } else { // if the code is not matched to db code

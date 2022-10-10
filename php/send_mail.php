@@ -12,7 +12,7 @@ $message = "Thanks for signing up
 $headers = "From:amardeep10as@gmail.com";
 if (mail($to_email, $subject, $message, $headers)) { // if mail is send successflly send the random generated code to the database
     include "config.php";
-    $sql = mysqli_query($conn, "UPDATE `users` SET `code` = '{$code}' WHERE `users`.`email` = '{$email}'");
+    $sql = mysqli_query($conn, "UPDATE `users` SET `code` = '{$code}', `email_verify` = 'false'  WHERE `users`.`email` = '{$email}'");
     echo "success";
 } else {
     echo "Email sending failed... ";
