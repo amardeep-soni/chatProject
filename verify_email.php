@@ -30,12 +30,12 @@ if (isset($_SESSION['unique_id'])) { // if unique_id session is exist means user
                 <div class="error-txt">This is an error message!</div>
                 <div class="success-txt">This is an success message!</div>
                 <div class="field input">
-                    <label>Email Address</label>
-                    <input type="text" name="email" placeholder="Enter your email" readonly value="<?php echo $email; ?>">
+                    <label for="email">Email Address</label>
+                    <input type="text" id="email" name="email" placeholder="Enter your email" readonly value="<?php echo $email; ?>">
                 </div>
                 <div class="field input">
-                    <label>Enter Code</label>
-                    <input type="text" name="code" placeholder="Enter code" required>
+                    <label for="code">Enter Code</label>
+                    <input type="text" id="code" name="code" placeholder="Enter code" required>
                 </div>
                 <div class="field input button">
                     <input type="submit" value="Verify">

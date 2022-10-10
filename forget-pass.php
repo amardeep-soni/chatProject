@@ -18,8 +18,8 @@
                 <div class="error-txt">This is an error message!</div>
                 <div class="success-txt">This is an error message!</div>
                 <div class="field input emailInput">
-                    <label>Email Address</label>
-                    <input type="text" name="email" placeholder="Enter your email">
+                    <label for="email">Email Address</label>
+                    <input type="text" id="email" name="email" placeholder="Enter your email">
                 </div>
                 <div id="hiddenField">
                     
@@ -28,6 +28,7 @@
                     <input type="submit" value="Find Email">
                 </div>
             </form>
+            <div class="hr"></div>
             <div class="link"><a href="login.php">Login now</a></div>
         </section>
     </div>

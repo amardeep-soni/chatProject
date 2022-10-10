@@ -1,9 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION['unique_id'])) { // if user is logged in
-    header("location: user.php");
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,50 +6,47 @@ if (isset($_SESSION['unique_id'])) { // if user is logged in
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amardeep Chat App</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+            background-image: url(img/back.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 0%;
+            backdrop-filter: blur(5px);
+            color: white;
+        }
+
+        img {
+            border-radius: 100px 30px;
+        }
+    </style>
 </head>
 
-<body>
-    <div class="wrapper">
-        <section class="form signup">
-            <header>Amardeep Chat App</header>
-            <form action="#" enctype="multipart/form-data">
-                <div class="error-txt">This is an error message!</div>
-                <div class="success-txt">This is an success message!</div>
-                <div class="name-details">
-                    <div class="field input">
-                        <label>First Name</label>
-                        <input type="text" name="fname" placeholder="First Name" required>
-                    </div>
-                    <div class="field input">
-                        <label>Last Name</label>
-                        <input type="text" name="lname" placeholder="Last Name" required>
-                    </div>
-                </div>
-                <div class="field input">
-                    <label>Email Address</label>
-                    <input type="text" name="email" placeholder="Enter your email" required>
-                </div>
-                <div class="field input">
-                    <label>Password</label>
-                    <input type="password" name="password" placeholder="Enter your password" required>
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="field input image">
-                    <label>Select Image</label>
-                    <input type="file" name="image" required>
-                </div>
-                <div class="field input button">
-                    <input type="submit" value="Continue to chat">
-                </div>
-            </form>
-            <div class="link">Already signed up? <a href="login.php">Login now</a></div>
-        </section>
-    </div>
+<body class="p-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <img src="img/chatImg.jpg" width="90%" alt="Chat Img">
+            </div>
+            <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center">
+                <h1>Welcome to, <br> &nbsp;&nbsp; Amardeep Chat App</h1>
+                <h5 class="text-center my-2">Here you can Chat privately with your Friends And Family</h5>
 
-    <script src="js/passShowHide.js"></script>
-    <script src="js/signup.js"></script>
+                <div class="button d-flex align-items-center">
+                    <a href="signup.php" class="btn btn-primary px-5 py-2 mt-4">Signup</a>
+                    <a href="login.php" class="btn btn-warning px-5 py-2 ml-3 mt-4">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

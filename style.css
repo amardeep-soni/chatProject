@@ -13,6 +13,13 @@ body {
     align-items: center;
     min-height: 100vh;
     background: #f7f7f7;
+
+    width: 100%;
+    background-image: url(img/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 0%;
+    backdrop-filter: blur(2px);
 }
 
 .wrapper {
@@ -48,6 +55,7 @@ body {
     border: 1px solid #f5c6cb;
     display: none;
 }
+
 .form form .success-txt {
     color: #32721c;
     background: #d8f8d7;
@@ -77,7 +85,9 @@ form .name-details .field:last-child {
     margin-bottom: 10px;
     position: relative;
 }
-
+.form form .field label{
+    margin-bottom: 4px;
+}
 .form form .field input {
     outline: none;
 }
@@ -89,6 +99,10 @@ form .name-details .field:last-child {
     padding: 0 10px;
     border: 1px solid gray;
     border-radius: 5px;
+}
+
+.form form .input input:focus {
+    outline: 2px solid rgb(28, 107, 243);
 }
 
 .form form .image input {
@@ -107,7 +121,7 @@ form .name-details .field:last-child {
     border: none;
     font-size: 17px;
     font-weight: 400;
-    background: #333;
+    background: rgb(28, 107, 243);
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
@@ -121,10 +135,12 @@ form .name-details .field:last-child {
     transform: translateY(-50%);
     cursor: pointer;
 }
-.form form .field i.active::before{
-    color: #333;
+
+.form form .field i.active::before {
+    color: rgb(28, 107, 243);
     content: "\f070";
 }
+
 .form .link {
     text-align: center;
     margin: 10px 0;
@@ -132,7 +148,7 @@ form .name-details .field:last-child {
 }
 
 .form .link a {
-    color: #333;
+    color: rgb(28, 107, 243);
 }
 
 .form .link a:hover {
@@ -177,7 +193,8 @@ form .name-details .field:last-child {
     font-size: 18px;
     font-weight: 500;
 }
-.users .details p{
+
+.users .details p {
     color: #67676a;
 }
 
@@ -185,14 +202,15 @@ form .name-details .field:last-child {
     color: #fff;
     font-size: 17px;
     padding: 7px 15px;
-    background-color: #333;
+    background-color: rgb(28, 107, 243);
     border-radius: 5px;
 }
+
 .verify .sendAgain {
     color: #fff;
     font-size: 17px;
     padding: 7px 15px;
-    background-color: #333;
+    background-color: rgb(28, 107, 243);
     border-radius: 5px;
     display: none;
 }
@@ -218,7 +236,8 @@ form .name-details .field:last-child {
     pointer-events: none;
     transition: all 0.3s ease;
 }
-.users .search input.active{
+
+.users .search input.active {
     opacity: 1;
     pointer-events: auto;
 }
@@ -229,131 +248,171 @@ form .name-details .field:last-child {
     border: none;
     outline: none;
     color: #fff;
-    background: #333;
+    background: rgb(28, 107, 243);
     cursor: pointer;
     font-size: 17px;
     border-radius: 0 5px 5px 0;
 }
+
 .users .search button.active {
     color: #fff;
-    background: #333;
+    background: rgb(28, 107, 243);
 }
+
 .users .search button.active i::before {
     content: "\f00d";
 }
-.users-list{
+
+.users-list {
     max-height: 265px;
     overflow-y: auto;
 }
-.users-list::-webkit-scrollbar{
+
+/* .users-list::-webkit-scrollbar {
     width: 0;
+} */
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
 }
-.users-list a{
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(114, 166, 255);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(28, 107, 243);
+    border-radius: 10px;
+}
+
+.users-list a {
     padding: 15px 0;
     page-break-after: 10px;
     padding-right: 15px;
     border-bottom-color: #f1f1f1;
 }
-.users-list a:first-child{
+
+.users-list a:first-child {
     padding-top: 0;
 }
-.users-list a:last-child{
+
+.users-list a:last-child {
     border: none;
     margin-bottom: 0px;
 }
+
 .users-list a .content img {
     height: 40px;
     width: 40px;
 }
-.users-list a .content p{
+
+.users-list a .content p {
     color: #67676a;
 }
-.users-list a .status-dot{
+
+.users-list a .status-dot {
     font-size: 12px;
     color: #468669;
 }
 
 /* We'll use this class name in php to show offline status */
-.users-list a .status-dot.offline{
+.users-list a .status-dot.offline {
     color: #ccc;
 }
 
 
 /* chat area css code */
-.chat-area header{
+.chat-area header {
     display: flex;
     align-items: center;
     padding: 18px 30px;
 }
-.chat-area header .back-icon{
+
+.chat-area header .back-icon {
     font-size: 18px;
-    color: #333;
+    color: rgb(28, 107, 243);
 }
-.chat-area header img{
+
+.chat-area header img {
     height: 45px;
     width: 45px;
     margin: 0 15px;
 }
-.chat-area header span{
+
+.chat-area header span {
     font-size: 17px;
     font-weight: 500;
 }
 
-.chat-box{
+.chat-box {
     height: 300px;
-    overflow-y:  auto;
+    overflow-y: auto;
     background: #f7f7f7;
     padding: 10px 30px 20px 30px;
-    box-shadow: inset 0 32px 32px -32px rgba(0 0 0 / 5%),inset 0 -32px 32px -32px rgba(0 0 0 / 5%);
+    box-shadow: inset 0 32px 32px -32px rgba(0 0 0 / 5%), inset 0 -32px 32px -32px rgba(0 0 0 / 5%);
 }
-.chat-box::-webkit-scrollbar{
+
+.chat-box::-webkit-scrollbar {
     width: 0px;
 }
-.chat-box .chat{
+
+.chat-box .chat {
     margin: 15px 0;
 }
-.chat-box .chat p{
+
+.chat-box .chat p {
     padding: 8px 16px;
     word-wrap: break-word;
     box-shadow: 0 0 32px rgb(0 0 0 / 10%), 0 16px 16px -16px rgb(0 0 0 / 10%)
 }
-.chat-box .outgoing{
+
+.chat-box .outgoing {
     display: flex;
 }
-.outgoing .details{
+
+.outgoing .details {
     margin-left: auto;
     max-width: calc(100% - 130px);
 }
-.outgoing .details p{
-    background: #333;
+
+.outgoing .details p {
+    background: rgb(28, 107, 243);
     color: #fff;
     border-radius: 18px 18px 0 18px;
 }
-.chat-box .incoming{
+
+.chat-box .incoming {
     display: flex;
     align-items: flex-end;
 }
-.chat-box .incoming img{
+
+.chat-box .incoming img {
     height: 35px;
     width: 35px;
 }
-.incoming .details{
+
+.incoming .details {
     margin-left: 10px;
     margin-right: auto;
     max-width: calc(100% - 130px);
 }
-.incoming .details p{
+
+.incoming .details p {
     color: #333;
     background: #fff;
     border-radius: 18px 18px 18px 0;
 }
 
-.chat-area .typing-area{
+.chat-area .typing-area {
     padding: 18px 30px;
     display: flex;
     justify-content: space-between;
 }
-.typing-area input{
+
+.typing-area input {
     height: 45px;
     width: calc(100% - 58px);
     font-size: 17px;
@@ -361,13 +420,20 @@ form .name-details .field:last-child {
     padding: 0 13px;
     border-radius: 5px 0 0 5px;
 }
-.typing-area button{
+
+.typing-area button {
     width: 55px;
     border: none;
     outline: none;
-    background: #333;
+    background: rgb(28, 107, 243);
     color: #fff;
     font-size: 19px;
     cursor: pointer;
     border-radius: 0 5px 5px 0;
+}
+
+.hr {
+    border: 1px solid black;
+    border-radius: 50%;
+    border-bottom: none;
 }

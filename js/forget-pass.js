@@ -48,8 +48,8 @@ sendBtn.onclick = () => { // first when sendBtn is click then find the email
                                         // as code is send successfully then put element to add code
                                         hiddenField.innerHTML = `
                                         <div class="field input">
-                                            <label>Enter Code</label>
-                                            <input type="text" name="code" placeholder="Enter your code">
+                                            <label for="code">Enter Code</label>
+                                            <input type="text" id="code" name="code" placeholder="Enter your code">
                                         </div>`;
                                         sendBtn.value = 'Verify Code'; // change the button text
 
@@ -68,8 +68,8 @@ sendBtn.onclick = () => { // first when sendBtn is click then find the email
                                                             // as code is matched successfylly then overright the code element and put the password input field so that user can input his/her new password
                                                             hiddenField.innerHTML = `
                                                             <div class="field input">
-                                                                <label>Enter Your new password</label>
-                                                                <input type="text" name="password" placeholder="Enter your password">
+                                                                <label for="password">Enter Your new password</label>
+                                                                <input type="text" id="password" name="password" placeholder="Enter your password">
                                                             </div>`;
 
                                                             document.querySelector("head").innerHTML += `<script src="js/passShowHide.js"></script>"`;
