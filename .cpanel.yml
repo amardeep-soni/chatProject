@@ -1,5 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/amardeep/repositories/chatProject/
-    - /bin/cp * $DEPLOYPATH
