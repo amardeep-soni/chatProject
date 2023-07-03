@@ -38,7 +38,7 @@
                 <img src="img/chatImg.jpg" width="90%" alt="Chat Img">
             </div>
             <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center">
-                <h1>Welcome to, <br> &nbsp;&nbsp; Amardeep Chat App</h1>
+                <h1>Welcome to, <br> &nbsp;&nbsp; Amardeep Chat WebApp</h1>
                 <h5 class="text-center my-2">Here you can Chat privately with your Friends And Family</h5>
 
                 <div class="button d-flex align-items-center">
