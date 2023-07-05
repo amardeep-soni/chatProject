@@ -25,6 +25,7 @@ body {
 .wrapper {
     background: #ffffff;
     width: 450px;
+    margin: 10px;
     border-radius: 16px;
     box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
 }
@@ -204,6 +205,7 @@ form .name-details .field:last-child {
     padding: 7px 15px;
     background-color: rgb(28, 107, 243);
     border-radius: 5px;
+    margin-left: 20px;
 }
 
 .verify .sendAgain {
@@ -264,7 +266,7 @@ form .name-details .field:last-child {
 }
 
 .users-list {
-    max-height: 265px;
+    max-height: 60vh;
     overflow-y: auto;
 }
 
@@ -348,7 +350,7 @@ form .name-details .field:last-child {
 }
 
 .chat-box {
-    height: 300px;
+    height: 60vh;
     overflow-y: auto;
     background: #f7f7f7;
     padding: 10px 30px 20px 30px;
@@ -375,7 +377,7 @@ form .name-details .field:last-child {
 
 .outgoing .details {
     margin-left: auto;
-    max-width: calc(100% - 130px);
+    max-width: calc(100% - 20%);
 }
 
 .outgoing .details p {
@@ -397,7 +399,7 @@ form .name-details .field:last-child {
 .incoming .details {
     margin-left: 10px;
     margin-right: auto;
-    max-width: calc(100% - 130px);
+    max-width: calc(100% - 20%);
 }
 
 .incoming .details p {
