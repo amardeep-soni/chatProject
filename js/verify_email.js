@@ -36,7 +36,7 @@ verifyBtn.onclick = () => { // send the mail and code to verify email
                     successText.style.display = "block";
                     errorText.style.display = "none";
                     setTimeout(() => {
-                        location.href = "login.php";
+                        setSessionAndRedirect();
                     }, 3000);
                 } else { // if any error occured then print the erro
                     errorText.textContent = data;
@@ -52,4 +52,21 @@ verifyBtn.onclick = () => { // send the mail and code to verify email
     // we have to send the form data throught ajax to php
     let formData = new FormData(form); //creating new formData object
     xhr.send(formData); // sending the form data to php
+}
+function setSessionAndRedirect() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "./php/login.php", true);
+    xhr.onload = () => {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                let data = xhr.response;
+                if (data == "success") {
+                    window.location.href = "user.php"; // redirect to chat.php
+                } else {
+                    // Handle any errors or display a message
+                }
+            }
+        }
+    }
+    xhr.send();
 }

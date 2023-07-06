@@ -10,6 +10,8 @@ if (!empty($email) && !empty($password)) {
             $row = mysqli_fetch_assoc($sql);
             // set new password
             $sql2 = mysqli_query($conn, "UPDATE `users` SET `email_verify` = 'true', `password` = '{$password}' WHERE `email` = '{$row['email']}'");
+            session_start();
+            $_SESSION['email'] = $email;
             echo "success";
         }
     } else {

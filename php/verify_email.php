@@ -19,7 +19,6 @@ if (!empty($email) && !empty($code)) { // if the email and code is not empty
 
                 $sql2 = mysqli_query($conn, "UPDATE `users` SET `email_verify` = '{$emailVerify}' WHERE `email` = '{$row['email']}'");
                 echo "success";
-                session_destroy();
             } else { // if the code is not matched to db code
                 echo "$code code is not matched. Please Enter Correct Code";
             }

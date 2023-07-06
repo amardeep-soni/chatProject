@@ -86,8 +86,8 @@ sendBtn.onclick = () => { // first when sendBtn is click then find the email
                                                                                 successText.style.display = 'block';
                                                                                 errorText.style.display = 'none';
 
-                                                                                setTimeout(() => { // after two second redirect the user to login page
-                                                                                    location.href = "login.php";
+                                                                                setTimeout(() => {
+                                                                                    setSessionAndRedirect();
                                                                                 }, 2000);
                                                                             } else { // if password is not updated
                                                                                 errorText.textContent = data;
@@ -133,4 +133,21 @@ sendBtn.onclick = () => { // first when sendBtn is click then find the email
     // we have to send the form data throught ajax to php
     let formData = new FormData(form); //creating new formData object
     xhr.send(formData); // sending the form data to php
+}
+function setSessionAndRedirect() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "./php/login.php", true);
+    xhr.onload = () => {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                let data = xhr.response;
+                if (data == "success") {
+                    window.location.href = "user.php"; // redirect to chat.php
+                } else {
+                    // Handle any errors or display a message
+                }
+            }
+        }
+    }
+    xhr.send();
 }
