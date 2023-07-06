@@ -14,7 +14,7 @@
     <div class="wrapper">
         <section class="form forgetPass">
             <header>Amardeep Chat App</header>
-            <form action="">
+            <form action=""  autocomplete="off">
                 <div class="error-txt">This is an error message!</div>
                 <div class="success-txt">This is an error message!</div>
                 <div class="field input emailInput">

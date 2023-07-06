@@ -26,7 +26,7 @@ if (isset($_SESSION['unique_id'])) { // if unique_id session is exist means user
         <section class="form verify">
             <header>Amardeep Chat App</header>
             <h3 style="margin-top: 20px;text-align: center;">Verify Your Email to Login <br> Please check your Mail</h3>
-            <form action="#" enctype="multipart/form-data">
+            <form action="#" enctype="multipart/form-data" autocomplete="off">
                 <div class="error-txt">This is an error message!</div>
                 <div class="success-txt">This is an success message!</div>
                 <div class="field input">
@@ -35,7 +35,7 @@ if (isset($_SESSION['unique_id'])) { // if unique_id session is exist means user
                 </div>
                 <div class="field input">
                     <label for="code">Enter Code</label>
-                    <input type="text" id="code" name="code" placeholder="Enter code" required>
+                    <input type="number" maxlength="4" id="code" name="code" placeholder="****" required>
                 </div>
                 <div class="field input button">
                     <input type="submit" value="Verify">

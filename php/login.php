@@ -40,6 +40,7 @@ function check($sql)
             }
         } else { // if mail is not verifyed then start session and this this echo text will allow login js to redirect the user to verify email
             echo "not verifyed";
+            session_destroy();
             session_start();
             $_SESSION['email'] = $email;
         }

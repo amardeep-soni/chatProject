@@ -49,7 +49,7 @@ sendBtn.onclick = () => { // first when sendBtn is click then find the email
                                         hiddenField.innerHTML = `
                                         <div class="field input">
                                             <label for="code">Enter Code</label>
-                                            <input type="text" id="code" name="code" placeholder="Enter your code">
+                                            <input type="number" maxlength="4" id="code" name="code" placeholder="****" required>
                                         </div>`;
                                         sendBtn.value = 'Verify Code'; // change the button text
 
@@ -82,7 +82,7 @@ sendBtn.onclick = () => { // first when sendBtn is click then find the email
                                                                         if (xhr4.status === 200) { // if password is updated successfylly
                                                                             let data = xhr4.response;
                                                                             if (data == 'success') {
-                                                                                successText.textContent = 'Password Reset Successfylly';
+                                                                                successText.textContent = 'Password Reset Successfully';
                                                                                 successText.style.display = 'block';
                                                                                 errorText.style.display = 'none';
 

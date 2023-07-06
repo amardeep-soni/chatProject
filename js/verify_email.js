@@ -7,6 +7,9 @@ form.onsubmit = (e) => {
     e.preventDefault(); //prevanting form from submitting
 }
 window.onload = () => { // onload send the mail to the current user email
+    errorText.textContent = "Sending Code";
+    errorText.style.display = "block";
+    successText.style.display = "none";
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "php/send_mail.php", true);
     xhr.onload = () => {
@@ -14,8 +17,9 @@ window.onload = () => { // onload send the mail to the current user email
             if (xhr.status === 200) {
                 let data = xhr.response;
                 if (data == "success") { // if mail is send successfully
-                    successText.textContent = 'Mail send successfully';
+                    errorText.style.display = "none";
                     successText.style.display = "block";
+                    successText.textContent = 'Code send successfully';
                 } else { // if mail is not send successfully reload the page
                     location.reload();
                 }

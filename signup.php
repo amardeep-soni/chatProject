@@ -20,7 +20,7 @@ if (isset($_SESSION['unique_id'])) { // if user is logged in
     <div class="wrapper">
         <section class="form signup">
             <header>Amardeep Chat App</header>
-            <form action="#" enctype="multipart/form-data">
+            <form action="#" enctype="multipart/form-data" autocomplete="off">
                 <div class="error-txt">This is an error message!</div>
                 <div class="success-txt">This is an success message!</div>
                 <div class="name-details">
