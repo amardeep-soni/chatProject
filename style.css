@@ -86,9 +86,11 @@ form .name-details .field:last-child {
     margin-bottom: 10px;
     position: relative;
 }
-.form form .field label{
+
+.form form .field label {
     margin-bottom: 4px;
 }
+
 .form form .field input {
     outline: none;
 }
@@ -291,7 +293,7 @@ form .name-details .field:last-child {
 }
 
 .users-list a {
-    padding: 15px 0;
+    padding-top: 15px;
     page-break-after: 10px;
     padding-right: 15px;
     border-bottom-color: #f1f1f1;
@@ -313,6 +315,8 @@ form .name-details .field:last-child {
 
 .users-list a .content p {
     color: #67676a;
+    height: 20px;
+    overflow: hidden;
 }
 
 .users-list a .status-dot {
@@ -330,7 +334,7 @@ form .name-details .field:last-child {
 .chat-area header {
     display: flex;
     align-items: center;
-    padding: 18px 30px;
+    padding: 18px;
 }
 
 .chat-area header .back-icon {
@@ -353,7 +357,7 @@ form .name-details .field:last-child {
     height: 60vh;
     overflow-y: auto;
     background: #f7f7f7;
-    padding: 10px 30px 20px 30px;
+    padding: 10px 20px 20px 20px;
     box-shadow: inset 0 32px 32px -32px rgba(0 0 0 / 5%), inset 0 -32px 32px -32px rgba(0 0 0 / 5%);
 }
 
@@ -409,7 +413,7 @@ form .name-details .field:last-child {
 }
 
 .chat-area .typing-area {
-    padding: 18px 30px;
+    padding: 18px;
     display: flex;
     justify-content: space-between;
 }
@@ -438,4 +442,10 @@ form .name-details .field:last-child {
     border: 1px solid black;
     border-radius: 50%;
     border-bottom: none;
+}
+
+@media only screen and (max-width: 360px) {
+    .users {
+        padding: 10px;
+    }
 }
