@@ -7,14 +7,14 @@ while ($row = mysqli_fetch_assoc($sql)) {
     $query2 = mysqli_query($conn, $sql2);
     $row2 = mysqli_fetch_assoc($query2);
     if (mysqli_num_rows($query2) > 0) {
-        $result = $row2['message'];
-        // adding you: text before msg if login id send msg
         ($outgoing_id == $row2['outgoing_msg_id']) ? $you = "You: " : $you = "";
+        // adding you: text before msg if login id send msg
+        $result = $you . $row2['message'];
     } else {
         $result = "No message available";
     }
     // triming message if word are more than 20
-    (strlen($result) > 28) ? $msg = substr($result, 0, 28) . '...' : $msg = $result;
+    (strlen($result) > 38) ? $msg = substr($result, 0, 38) . '...' : $msg = $result;
 
     // check user is online or offline
     ($row['status'] == "Offline now") ? $offline = "offline" : $offline = "";
@@ -23,7 +23,7 @@ while ($row = mysqli_fetch_assoc($sql)) {
                         <img src='php/images/" . $row['img'] . "' alt=''>
                         <div class='details'>
                             <span>" . $row['fname'] . " " . $row['lname'] . "</span>
-                            <p>" . $you . $msg . "</p>
+                            <p>". $msg . "</p>
                         </div>
                     </div>
                     <div class='status-dot " . $offline . "'><i class='fas fa-circle'></i></div>
