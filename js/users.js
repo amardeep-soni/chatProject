@@ -32,8 +32,7 @@ searchBar.onkeyup = () => {
     xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
     xhr.send("searchTerm=" + searchTerm);
 }
-
-setInterval(() => {
+function loadUser() {
     // let's start Ajax
     let xhr = new XMLHttpRequest();  // creating xml object
     xhr.open("POST", "php/user.php", true);
@@ -48,11 +47,15 @@ setInterval(() => {
         }
     }
     xhr.send();
-}, 500); // this function will run frequently after 500ms
+}
+setInterval(() => {
+    loadUser();
+}, 2000); // this function will run frequently after 4s
+loadUser();
 
 // show the logged user is offline or online text below the name of the user
-const statusEl = document.querySelector(".details p");
-setInterval(() => {
+function loadUserStatus() {
+    const statusEl = document.querySelector(".details p");
     // let's start Ajax
     let xhr = new XMLHttpRequest(); // creating xml object
     xhr.open("GET", "php/get-logged-user-status.php", true);
@@ -65,4 +68,7 @@ setInterval(() => {
         }
     }
     xhr.send();
-}, 500); // this function will run frequently after 500ms
+}
+setInterval(() => {
+    loadUserStatus();
+}, 2000); // this function will run frequently after 2s

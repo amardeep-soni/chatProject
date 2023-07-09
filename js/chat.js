@@ -32,8 +32,8 @@ chatBox.onmouseenter = () => {
 chatBox.onmouseleave = () => {
     chatBox.classList.remove("active");
 }
-
-setInterval(() => {
+function loadChat() {
+    console.log("load chat");
     // let's start Ajax
     let xhr = new XMLHttpRequest();  // creating xml object
     xhr.open("POST", "php/get-chat.php", true);
@@ -51,7 +51,12 @@ setInterval(() => {
     // we have to send the form data throught ajax to php
     let formData = new FormData(form); //creating new formData object
     xhr.send(formData); // sending the form data to php
-}, 500); // this function will run frequently after 500ms
+}
+setInterval(() => {
+    loadChat();
+}, 2000); // this function will run frequently after 2s
+loadChat();
+
 
 function scrollToBottom() { // this function will make out message automatically to bottom
     chatBox.scrollTop = chatBox.scrollHeight;
