@@ -52,6 +52,7 @@ setInterval(() => {
     loadUser();
 }, 2000); // this function will run frequently after 4s
 loadUser();
+loadUserStatus();
 
 // show the logged user is offline or online text below the name of the user
 function loadUserStatus() {
