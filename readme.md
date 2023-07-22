@@ -2,6 +2,8 @@
 
 This is the simple chat App which is made with HTML, CSS, JS with ajax and PHP with mysql Database.
 
+## [View Full Detail](https://amardeepdev.com/project-details.php?proj=chat)
+
 ### How to use this app
 
 - Click on [View Online](https://chat.amardeepdev.com/)
@@ -20,13 +22,13 @@ This is the simple chat App which is made with HTML, CSS, JS with ajax and PHP w
 - Search functionality to search the account of the user
 - Chat auto refresh without page reload
 
-##### How to use this project in Your PC
+#### How to use this project in Your PC
 
 - Download the zip file.
-- Make the database named chat im mysql
-- Upload the sql query file to create the table required for this App
+- Make the database named chat in mysql
+- Upload the sql query file (chat.sql) to create the table required for this App
 - Setup your localhost and hosting server email
 - Run the project
 - All Done.
 
-### Created by [Amardeep Soni](https://amardeepdev.com)
+## Created by [Amardeep Soni](https://amardeepdev.com)
